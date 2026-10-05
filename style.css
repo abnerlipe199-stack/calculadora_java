@@ -1,0 +1,167 @@
+/* =========================
+   CONFIGURAÇÃO DA PÁGINA
+   ========================= */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    background-color: #f0f0f0;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   CORPO DA CALCULADORA
+   ========================= */
+
+.calculadora {
+    background-color: #333;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+    width: 300px;
+}
+
+
+/* =========================
+   VISOR
+   ========================= */
+
+#visor {
+    width: 100%;
+
+    height: 60px;
+
+    margin-bottom: 15px;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: white;
+
+    color: #222;
+
+    font-size: 28px;
+
+    text-align: right;
+
+    outline: none;
+}
+
+
+/* =========================
+   ÁREA DOS BOTÕES
+   ========================= */
+
+.botoes {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 8px;
+}
+
+
+/* =========================
+   BOTÕES
+   ========================= */
+
+button {
+    height: 60px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: #555;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.15s;
+}
+
+
+/* =========================
+   EFEITO AO PASSAR O MOUSE
+   ========================= */
+
+button:hover {
+    background-color: #666;
+}
+
+
+/* =========================
+   EFEITO AO CLICAR
+   ========================= */
+
+button:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================
+   BOTÕES DE OPERAÇÃO
+   ========================= */
+
+.operador {
+    background-color: #ff9500;
+}
+
+.operador:hover {
+    background-color: #ffad33;
+}
+
+
+/* =========================
+   BOTÃO C
+   ========================= */
+
+.especial {
+    background-color: #d9534f;
+}
+
+.especial:hover {
+    background-color: #e66a66;
+}
+
+
+/* =========================
+   BOTÃO IGUAL
+   ========================= */
+
+.igual {
+    background-color: #28a745;
+}
+
+.igual:hover {
+    background-color: #35b957;
+}
+
+
+/* =========================
+   BOTÃO ZERO
+   ========================= */
+
+.zero {
+    grid-column: span 2;
+}
