@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .calculadora {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        #visor {
+            width: 100%;
+            height: 50px;
+            font-size: 24px;
+            text-align: right;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .botoes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+
+        button {
+            height: 55px;
+            border: none;
+            border-radius: 8px;
+            background-color: #555;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #666;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .operador {
+            background-color: #ff9500;
+        }
+
+        .especial {
+            background-color: #d9534f;
+        }
+
+        .igual {
+            background-color: #28a745;
+        }
+
+        .zero {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculadora">
+
+        <input type="text" id="visor" readonly>
+
+        <div class="botoes">
+
+            <button class="especial" onclick="limpar()">C</button>
+            <button onclick="adicionar('(')">(</button>
+            <button onclick="adicionar(')')">)</button>
+            <button class="operador" onclick="adicionar('/')">÷</button>
+
+            <button onclick="adicionar('7')">7</button>
+            <button onclick="adicionar('8')">8</button>
+            <button onclick="adicionar('9')">9</button>
+            <button class="operador" onclick="adicionar('*')">×</button>
+
+            <button onclick="adicionar('4')">4</button>
+            <button onclick="adicionar('5')">5</button>
+            <button onclick="adicionar('6')">6</button>
+            <button class="operador" onclick="adicionar('-')">−</button>
+
+            <button onclick="adicionar('1')">1</button>
+            <button onclick="adicionar('2')">2</button>
+            <button onclick="adicionar('3')">3</button>
+            <button class="operador" onclick="adicionar('+')">+</button>
+
+            <button class="zero" onclick="adicionar('0')">0</button>
+            <button onclick="adicionar('.')">.</button>
+            <button class="igual" onclick="calcular()">=</button>
+
+            <button onclick="adicionar('**')">xʸ</button>
+            <button onclick="adicionar('%')">%</button>
+            <button onclick="adicionar('Math.sqrt(')">√</button>
+            <button onclick="adicionar('Math.abs(')">|x|</button>
+
+        </div>
+
+    </div>
+
+    <script>
+        const visor = document.getElementById("visor");
+
+        function adicionar(valor) {
+            visor.value += valor;
+        }
+
+        function limpar() {
+            visor.value = "";
+        }
+
+        function calcular() {
+            try {
+                visor.value = eval(visor.value);
+            } catch {
+                visor.value = "Erro";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
